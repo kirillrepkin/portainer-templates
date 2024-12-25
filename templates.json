@@ -3,17 +3,14 @@
     "templates": [
         {
             "id": 1,
-            "type": 3,
+            "type": 1,
             "name": "semaphore",
             "title": "Semaphore",
             "description": "Semaphore CI/CD application",
             "note": "Ensure PostgreSQL is running on the host system for this to work.",
             "categories": ["CI/CD", "DevOps"],
             "platform": "linux",
-            "repository": {
-                "url": "https://github.com/kirillrepkin/portainer-templates",
-                "stackfile": "apps/semaphore/docker-compose.yml"
-            },
+            "image": "semaphoreui/semaphore:v2.10.43",  
             "env": [
                 {
                     "name": "SEMAPHORE_DB_DIALECT",
@@ -61,6 +58,23 @@
                     "label": "Admin Email",
                     "default": "admin@localhost"
                 }
+            ],
+            "volumes": [
+                {
+                    "container": "/var/lib/semaphore",
+                    "bind": "/mnt/data/docker/semaphore/data"
+                },
+                {
+                    "container": "/etc/semaphore",
+                    "bind": "/mnt/data/docker/semaphore/config"
+                },
+                {
+                    "container": "/tmp/semaphore",
+                    "bind": "/mnt/data/docker/semaphore/tmp"
+                }
+            ],
+            "ports": [
+                "9010:3000"
             ]
         }
     ]
