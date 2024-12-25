@@ -11,8 +11,8 @@
             "categories": ["CI/CD", "DevOps"],
             "platform": "linux",
             "repository": {
-                "url": "https://github.com/kirillrepkin/portainer-templates/apps/semaphore",
-                "stackfile": "docker-compose.yml"
+                "url": "https://github.com/kirillrepkin/portainer-templates",
+                "stackfile": "apps/semaphore/docker-compose.yml"
             },
             "env": [
                 {
