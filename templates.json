@@ -4,7 +4,7 @@
         {
             "id": 1,
             "type": 3,
-            "name": "Semaphore",
+            "name": "semaphore",
             "title": "Semaphore",
             "description": "Semaphore CI/CD application",
             "note": "Ensure PostgreSQL is running on the host system for this to work.",
