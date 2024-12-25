@@ -1,0 +1,67 @@
+{
+    "version": 3,
+    "templates": [
+        {
+            "id": 1,
+            "type": 3,
+            "name": "Semaphore",
+            "title": "Semaphore",
+            "description": "Semaphore CI/CD application",
+            "note": "Ensure PostgreSQL is running on the host system for this to work.",
+            "categories": ["CI/CD", "DevOps"],
+            "platform": "linux",
+            "repository": {
+                "url": "https://github.com/kirillrepkin/portainer-templates/apps/semaphore",
+                "stackfile": "docker-compose.yml"
+            },
+            "env": [
+                {
+                    "name": "SEMAPHORE_DB_DIALECT",
+                    "label": "Database Dialect",
+                    "default": "postgres"
+                },
+                {
+                    "name": "SEMAPHORE_DB_HOST",
+                    "label": "Database Host",
+                    "description": "The host address for your database",
+                    "default": "127.0.0.1"
+                },
+                {
+                    "name": "SEMAPHORE_DB_NAME",
+                    "label": "Database Name",
+                    "default": "semaphore"
+                },
+                {
+                    "name": "SEMAPHORE_DB_USER",
+                    "label": "Database Username",
+                    "default": "semaphore"
+                },
+                {
+                    "name": "SEMAPHORE_DB_PASS",
+                    "label": "Database Password",
+                    "default": "semaphore"
+                },
+                {
+                    "name": "SEMAPHORE_ADMIN",
+                    "label": "Admin Username",
+                    "default": "admin"
+                },
+                {
+                    "name": "SEMAPHORE_ADMIN_PASSWORD",
+                    "label": "Admin Password",
+                    "default": "semaphore"
+                },
+                {
+                    "name": "SEMAPHORE_ADMIN_NAME",
+                    "label": "Admin Name",
+                    "default": "Administrator"
+                },
+                {
+                    "name": "SEMAPHORE_ADMIN_EMAIL",
+                    "label": "Admin Email",
+                    "default": "admin@localhost"
+                }
+            ]
+        }
+    ]
+}
