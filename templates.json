@@ -96,6 +96,34 @@
                     "default": "UTC"
                 }
             ]
+        },
+        {
+            "id": 3,
+            "type": 3,
+            "title": "Dashy",
+            "description": "A self-hostable personal dashboard built for modern browsers.",
+            "note": "This template stores Dashy's configuration at /mnt/data/docker/dashy on the host. Ensure the path exists and has the right permissions.",
+            "categories": ["Dashboard", "Web"],
+            "platform": "linux",
+            "logo": "https://dashy.to/img/dashy.png",
+            "repository": {
+                "url": "https://github.com/kirillrepkin/portainer-templates",
+                "stackfile": "apps/dashy/docker-compose.yml"
+            },
+            "env": [
+                {
+                    "name": "UID",
+                    "label": "User ID",
+                    "description": "The User ID for the Dashy container.",
+                    "default": "1000"
+                },
+                {
+                    "name": "GID",
+                    "label": "Group ID",
+                    "description": "The Group ID for the Dashy container.",
+                    "default": "1000"
+                }
+            ]
         }
     ]
 }

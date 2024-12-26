@@ -1,0 +1,29 @@
+version: "3.8"
+
+services:
+  dashy:
+    image: lissy93/dashy
+    container_name: Dashy
+    ports:
+      - 4000:8080
+    volumes:
+      - dashy_config:/app/user-data
+    environment:
+      - NODE_ENV=production
+      - UID=${UID}
+      - GID=${GID}
+    restart: unless-stopped
+    healthcheck:
+      test: ['CMD', 'node', '/app/services/healthcheck']
+      interval: 1m30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+volumes:
+  dashy_config:
+    driver: local
+    driver_opts:
+      type: none
+      device: /mnt/data/docker/dashy
+      o: bind
