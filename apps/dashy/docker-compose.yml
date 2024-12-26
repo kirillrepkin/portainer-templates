@@ -5,7 +5,7 @@ services:
     image: lissy93/dashy
     container_name: Dashy
     ports:
-      - 4000:8080
+      - 9030:8080
     volumes:
       - dashy_config:/app/user-data
     environment:
