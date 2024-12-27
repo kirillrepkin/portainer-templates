@@ -21,5 +21,5 @@ volumes:
     driver: local
     driver_opts:
       type: none
-      device: /mnt/data/docker/n8n
+      device: ${VOLUMES_BASE_PATH}/n8n
       o: bind

@@ -60,6 +60,12 @@
                     "name": "SEMAPHORE_ADMIN_EMAIL",
                     "label": "Admin Email",
                     "default": "admin@localhost"
+                },
+                {
+                    "name": "VOLUMES_BASE_PATH",
+                    "label": "Volumes Base Path",
+                    "description": "The base path for storing volumes.",
+                    "default": "/home/docker/data"
                 }
             ]
         },
@@ -94,6 +100,12 @@
                     "label": "Timezone",
                     "description": "Set the timezone for n8n.",
                     "default": "UTC"
+                },
+                {
+                    "name": "VOLUMES_BASE_PATH",
+                    "label": "Volumes Base Path",
+                    "description": "The base path for storing volumes.",
+                    "default": "/home/docker/data"
                 }
             ]
         },
@@ -122,6 +134,12 @@
                     "label": "Group ID",
                     "description": "The Group ID for the Dashy container.",
                     "default": "1000"
+                },
+                {
+                    "name": "VOLUMES_BASE_PATH",
+                    "label": "Volumes Base Path",
+                    "description": "The base path for storing volumes.",
+                    "default": "/home/docker/data"
                 }
             ]
         },

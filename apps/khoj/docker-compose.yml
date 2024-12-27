@@ -28,7 +28,7 @@ services:
         condition: service_healthy
     image: ghcr.io/khoj-ai/khoj:latest
     ports:
-      - "42110:42110"
+      - "   :42110"
     working_dir: /app
     volumes:
       - khoj_config:/root/.khoj/

@@ -26,17 +26,17 @@ volumes:
     driver: local
     driver_opts:
       type: none
-      device: /mnt/data/docker/semaphore/data
+      device: ${VOLUMES_BASE_PATH}/semaphore/data
       o: bind
   semaphore_config:
     driver: local
     driver_opts:
       type: none
-      device: /mnt/data/docker/semaphore/config
+      device: ${VOLUMES_BASE_PATH}/semaphore/config
       o: bind
   semaphore_tmp:
     driver: local
     driver_opts:
       type: none
-      device: /mnt/data/docker/semaphore/tmp
+      device: ${VOLUMES_BASE_PATH}/semaphore/tmp
       o: bind
