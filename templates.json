@@ -124,6 +124,47 @@
                     "default": "1000"
                 }
             ]
+        },
+        {
+            "id": 4,
+            "type": 3,
+            "name": "postgres",
+            "title": "PostgreSQL",
+            "description": "PostgreSQL is a powerful, open-source relational database system.",
+            "note": "Ensure the volume path /mnt/data/docker/postgres exists and has the correct permissions.",
+            "categories": ["Database"],
+            "platform": "linux",
+            "logo": "https://upload.wikimedia.org/wikipedia/commons/2/29/Postgresql_elephant.svg",
+            "repository": {
+                "url": "https://github.com/kirillrepkin/portainer-templates",
+                "stackfile": "system/postgres/docker-compose.yml"
+            },
+            "env": [
+            {
+                "name": "POSTGRES_DB",
+                "label": "Database Name",
+                "description": "The name of the database to create.",
+                "default": "postgres"
+            },
+            {
+                "name": "POSTGRES_USER",
+                "label": "Database User",
+                "description": "The username for the PostgreSQL database.",
+                "default": "postgres"
+            },
+            {
+                "name": "POSTGRES_PASSWORD",
+                "label": "Database Password",
+                "description": "The password for the PostgreSQL database user.",
+                "default": "postgres"
+            },
+            {
+                "name": "VOLUMES_BASE_PATH",
+                "label": "Volumes Base Path",
+                "description": "The base path for storing volumes.",
+                "default": "/mnt/data/docker"
+            }
+            ]
         }
     ]
 }
