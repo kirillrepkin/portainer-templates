@@ -165,6 +165,54 @@
                 "default": "/mnt/data/docker"
             }
             ]
+        },
+        {
+            "id": 5,
+            "type": 3,
+            "name": "khoj",
+            "title": "Khoj",
+            "description": "",
+            "note": "",
+            "categories": ["AI", "Automation", "Personal"],
+            "platform": "linux",
+            "logo": "",
+            "repository": {
+                "url": "https://github.com/kirillrepkin/portainer-templates",
+                "stackfile": "apps/khoj/docker-compose.yml"
+            },
+            "env": [
+                {
+                    "name": "KHOJ_DJANGO_SECRET_KEY",
+                    "label": "Django Secret Key",
+                    "default": "django-insecure-1^7d=3&h5!mz1!l1jv7!1l2!l3jv4!l5j6!l7j8!l9j0"
+                },
+                {
+                    "name": "KHOJ_ADMIN_EMAIL",
+                    "label": "Admin Email",
+                    "default": "admin@localhost"
+                },
+                {
+                    "name": "KHOJ_ADMIN_PASSWORD",
+                    "label": "Admin Password",
+                    "default": "admin"
+                },
+                {
+                    "name": "OPENAI_API_KEY",
+                    "label": "OpenAI API Key",
+                    "default": "sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+                },
+                {
+                    "name": "KHOJ_DOMAIN",
+                    "label": "Domain",
+                    "default": "khoj.example.com"
+                },
+                {
+                    "name": "VOLUMES_BASE_PATH",
+                    "label": "Volumes Base Path",
+                    "description": "The base path for storing volumes.",
+                    "default": "/mnt/data/docker"
+                }
+            ]
         }
     ]
 }

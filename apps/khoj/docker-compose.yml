@@ -1,0 +1,86 @@
+services:
+  database:
+    image: ankane/pgvector
+    ports:
+      - "5433:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: postgres
+    volumes:
+      - khoj_db:/var/lib/postgresql/data/
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+  sandbox:
+    image: ghcr.io/khoj-ai/terrarium:latest
+  search:
+    image: docker.io/searxng/searxng:latest
+    volumes:
+      - khoj_search:/etc/searxng
+    environment:
+      - SEARXNG_BASE_URL=http://localhost:42113/
+  server:
+    depends_on:
+      database:
+        condition: service_healthy
+    image: ghcr.io/khoj-ai/khoj:latest
+    ports:
+      - "42110:42110"
+    working_dir: /app
+    volumes:
+      - khoj_config:/root/.khoj/
+      - khoj_models:/root/.cache/torch/sentence_transformers
+      - khoj_models:/root/.cache/huggingface
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_HOST=database
+      - POSTGRES_PORT=5432
+      - KHOJ_DJANGO_SECRET_KEY=${KHOJ_DJANGO_SECRET_KEY}
+      - KHOJ_ADMIN_EMAIL=${KHOJ_ADMIN_EMAIL}
+      - KHOJ_ADMIN_PASSWORD=${KHOJ_ADMIN_PASSWORD}
+      - KHOJ_DEBUG=False
+      - KHOJ_TERRARIUM_URL=http://sandbox:8080
+      - KHOJ_SEARXNG_URL=http://search:8080
+      # Uncomment line below to use with Ollama running on your local machine at localhost:11434.
+      # Change URL to use with other OpenAI API compatible providers like VLLM, LMStudio etc.
+      # - OPENAI_API_BASE=http://host.docker.internal:11434/v1/
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - KHOJ_DOMAIN=${KHOJ_DOMAIN}
+      - KHOJ_TELEMETRY_DISABLE=True
+      # - KHOJ_NO_HTTPS=True
+    command: --host="0.0.0.0" --port=42110 -vv --anonymous-mode --non-interactive
+
+
+volumes:
+  khoj_config:
+    driver: local
+    driver_opts:
+      type: none
+      device: ${VOLUMES_BASE_PATH}/khoj/config
+      o: bind
+
+  khoj_db:
+    driver: local
+    driver_opts:
+      type: none
+      device: ${VOLUMES_BASE_PATH}/khoj/db
+      o: bind
+
+  khoj_models:
+    driver: local
+    driver_opts:
+      type: none
+      device: ${VOLUMES_BASE_PATH}/khoj/models
+      o: bind
+
+  khoj_search:
+    driver: local
+    driver_opts:
+      type: none
+      device: ${VOLUMES_BASE_PATH}/khoj/search
+      o: bind
