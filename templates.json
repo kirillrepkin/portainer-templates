@@ -8,6 +8,7 @@
             "title": "Semaphore",
             "description": "Semaphore CI/CD application",
             "note": "Ensure PostgreSQL is running on the host system for this to work.",
+            "logo": "https://raw.githubusercontent.com/imagegenius/templates/main/unraid/img/semaphore.png",
             "categories": ["CI/CD", "DevOps"],
             "platform": "linux",
             "repository": {
@@ -193,7 +194,7 @@
             "note": "",
             "categories": ["AI", "Automation", "Personal"],
             "platform": "linux",
-            "logo": "",
+            "logo": "https://docs.khoj.dev/img/khoj-logo-sideways-500.png",
             "repository": {
                 "url": "https://github.com/kirillrepkin/portainer-templates",
                 "stackfile": "apps/khoj/docker-compose.yml"
