@@ -210,7 +210,7 @@
                     "name": "VOLUMES_BASE_PATH",
                     "label": "Volumes Base Path",
                     "description": "The base path for storing volumes.",
-                    "default": "/mnt/data/docker"
+                    "default": "/home/docker/data"
                 }
             ]
         }
