@@ -1,0 +1,19 @@
+volumes:
+    db-data:
+
+services:
+  web:
+    image: healthchecks/healthchecks:latest
+    ports:
+        - "${PUBLIC_PORT}:8000"
+    depends_on:
+        - db
+    extra_hosts:
+        - "db:${POSTGRES_HOST:-db}"
+    environment:
+        - DB_HOST=${POSTGRES_HOST:-db}
+        - DB_PORT=${POSTGRES_PORT:-5432}
+        - DB_NAME=${POSTGRES_DB:-healthchecks}
+        - DB_USER=${POSTGRES_USER:-healthchecks}
+        - DB_PASSWORD=${POSTGRES_PASSWORD:-healthchecks}
+    command: bash -c 'while !</dev/tcp/db/5432; do sleep 1; done; uwsgi /opt/healthchecks/docker/uwsgi.ini'

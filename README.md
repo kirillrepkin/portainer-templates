@@ -26,6 +26,10 @@ Paperless-NGX is an open-source document management system designed for digitizi
 
 Semaphore is a modern self-hosted continuous integration and deployment (CI/CD) server tailored for building, testing, and deploying software.
 
+### Healthchecks
+
+Healthchecks is a monitoring and health check service
+
 ## System
 
 ### Postgres

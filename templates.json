@@ -190,7 +190,7 @@
             "type": 3,
             "name": "khoj",
             "title": "Khoj",
-            "description": "",
+            "description": "Khoj is a personal assistant and knowledge base powered by AI, enabling natural language querying of notes, documents, and other stored data.",
             "note": "",
             "categories": ["AI", "Automation", "Personal"],
             "platform": "linux",
@@ -334,6 +334,54 @@
                     "name": "REDIS_PORT",
                     "label": "Redis Port",
                     "default": "6379"
+                }
+            ]
+        },
+        {
+            "id": 9,
+            "type": 3,
+            "name": "healthchecks",
+            "title": "Healthchecks",
+            "description": "Healthchecks is a monitoring and health check service",
+            "note": "",
+            "categories": ["Monitoring", "Cron", "DevOps", "Automation"],
+            "platform": "linux",
+            "logo": "https://healthchecks.io/static/img/logo-full-ua.svg",
+            "repository": {
+                "url": "https://github.com/kirillrepkin/portainer-templates",
+                "stackfile": "apps/healthchecks/docker-compose.yml"
+            },
+            "env": [
+                {
+                    "name": "VOLUMES_BASE_PATH",
+                    "label": "Volumes Base Path",
+                    "description": "The base path for storing volumes.",
+                    "default": "/home/docker/data"
+                },
+                {
+                    "name": "POSTGRES_HOST",
+                    "label": "Postgres Host",
+                    "default": "localhost"
+                },
+                {
+                    "name": "POSTGRES_PORT",
+                    "label": "Postgres Port",
+                    "default": "5432"
+                },
+                {
+                    "name": "POSTGRES_USER",
+                    "label": "Postgres User",
+                    "default": "healthchecks"
+                },
+                {
+                    "name": "POSTGRES_PASSWORD",
+                    "label": "Postgres Password",
+                    "default": "healthchecks"
+                },
+                {
+                    "name": "POSTGRES_DB",
+                    "label": "Postgres Database",
+                    "default": "healthchecks"
                 }
             ]
         }
