@@ -232,6 +232,29 @@
                     "default": "/home/docker/data"
                 }
             ]
+        },
+        {
+            "id": 6,
+            "type": 3,
+            "name": "nginxproxymanager",
+            "title": "Nginx Proxy Manager",
+            "description": "Nginx Proxy Manager is a web interface for managing and configuring reverse proxies and load balancers.",
+            "note": "This template stores Nginx Proxy Manager's configuration at /mnt/data/docker/nginxproxymanager on the host. Ensure the path exists and has the right permissions.",
+            "categories": ["Proxy", "Web"],
+            "platform": "linux",
+            "logo": "https://camo.githubusercontent.com/a0d453df6c842b098350e3d6bd0a739e7e53b093d51ddfee820b38d42b4382fc/68747470733a2f2f6e67696e7870726f78796d616e616765722e636f6d2f6769746875622e706e67",
+            "repository": {
+                "url": "https://github.com/kirillrepkin/portainer-templates",
+                "stackfile": "apps/nginxproxymanager/docker-compose.yml"
+            },
+            "env": [
+                {
+                    "name": "VOLUMES_BASE_PATH",
+                    "label": "Volumes Base Path",
+                    "description": "The base path for storing volumes.",
+                    "default": "/home/docker/data"
+                }
+            ]
         }
     ]
 }
