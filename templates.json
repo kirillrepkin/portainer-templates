@@ -281,6 +281,16 @@
                     "name": "POSTGRES_HOST",
                     "label": "Postgres Host",
                     "default": "localhost"
+                },
+                {
+                    "name": "REDIS_HOST",
+                    "label": "Redis Host",
+                    "default": "localhost"
+                },
+                {
+                    "name": "REDIS_URL",
+                    "label": "Redis URL",
+                    "default": "redis://redis:redis@localhost:6379/0"
                 }
             ]
         },

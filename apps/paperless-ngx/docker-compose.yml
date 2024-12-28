@@ -27,11 +27,6 @@
 # documentation.
 
 services:
-  broker:
-    image: docker.io/library/redis:7
-    restart: unless-stopped
-    volumes:
-      - redis_data:/data
 
   webserver:
     image: ghcr.io/paperless-ngx/paperless-ngx:latest
@@ -48,10 +43,11 @@ services:
       - consume:/usr/src/paperless/consume
     env_file: docker-compose.env
     environment:
-      PAPERLESS_REDIS: redis://broker:6379
+      PAPERLESS_REDIS: ${REDIS_URL:-redis://broker:6379}
       PAPERLESS_DBHOST: db
     extra_hosts:
       - "db:${POSTGRES_HOST:-db}"
+      - "broker:${REDIS_HOST:-broker}"
 
 volumes:
   data:
