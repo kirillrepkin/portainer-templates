@@ -255,6 +255,34 @@
                     "default": "/home/docker/data"
                 }
             ]
+        },
+        {
+            "id": 7,
+            "type": 3,
+            "name": "paperless-ngx",
+            "title": "Paperless-NGX",
+            "description": "Paperless-NGX is a web interface for managing and processing document workflows.",
+            "note": "This template stores Paperless-NGX's configuration at /mnt/data/docker/paperless-ngx on the host. Ensure the path exists and has the right permissions.",
+            "categories": ["Workflow", "Automation", "Personal"],
+            "platform": "linux",
+            "logo": "https://github.com/paperless-ngx/paperless-ngx/raw/main/resources/logo/web/png/White%20logo%20-%20no%20background.png",
+            "repository": {
+                "url": "https://github.com/kirillrepkin/portainer-templates",
+                "stackfile": "apps/paperless-ngx/docker-compose.yml"
+            },
+            "env": [
+                {
+                    "name": "VOLUMES_BASE_PATH",
+                    "label": "Volumes Base Path",
+                    "description": "The base path for storing volumes.",
+                    "default": "/home/docker/data"
+                },
+                {
+                    "name": "POSTGRES_HOST",
+                    "label": "Postgres Host",
+                    "default": "localhost"
+                }
+            ]
         }
     ]
 }
