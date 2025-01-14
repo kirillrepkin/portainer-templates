@@ -1,0 +1,19 @@
+version: "3.7"
+
+services:
+  node-red:
+    image: nodered/node-red:latest
+    environment:
+      - TZ=Europe/Moscow
+    ports:
+      - "${NODERED_PORT}:1880"
+    volumes:
+      - node-red-data:/data
+
+volumes:
+  node-red-data:
+    driver: local
+    driver_opts:
+      type: none
+      device: ${VOLUMES_BASE_PATH}/nodered
+      o: bind

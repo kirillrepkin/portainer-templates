@@ -384,6 +384,34 @@
                     "default": "healthchecks"
                 }
             ]
+        },
+        {
+            "id": 10,
+            "type": 3,
+            "name": "nodered",
+            "title": "Node-RED",
+            "description": "Node-RED is a flow-based programming environment for event-driven applications.",
+            "note": "Ensure the volume path /mnt/data/docker/nodered exists and has the correct permissions.",
+            "categories": ["Automation"],
+            "platform": "linux",
+            "logo": "https://nodered.org/about/resources/media/node-red-icon-2.png",
+            "repository": {
+                "url": "https://github.com/kirillrepkin/portainer-templates",
+                "stackfile": "apps/node-red/docker-compose.yml"
+            },
+            "env": [
+                {
+                    "name": "VOLUMES_BASE_PATH",
+                    "label": "Volumes Base Path",
+                    "description": "The base path for storing volumes.",
+                    "default": "/home/docker/data"
+                },
+                {
+                    "name": "NODERED_PORT",
+                    "label": "Node-RED Port",
+                    "default": "1880"
+                }
+            ]
         }
     ]
 }
