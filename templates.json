@@ -412,6 +412,29 @@
                     "default": "1880"
                 }
             ]
+        },
+        {
+            "id": 11,
+            "type": 3,
+            "name": "emqx",
+            "title": "EMQX",
+            "description": "EMQX is an open source MQTT broker.",
+            "note": "Ensure the volume path /mnt/data/docker/emqx exists and has the correct permissions.",
+            "categories": ["Messaging", "IoT"],
+            "platform": "linux",
+            "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwmh3Y2mJBL3I75UClKe8vy4rU07trldOhqg&s",
+            "repository": {
+                "url": "https://github.com/kirillrepkin/portainer-templates",
+                "stackfile": "apps/emqx/docker-compose.yml"
+            },
+            "env": [
+                {
+                    "name": "VOLUMES_BASE_PATH",
+                    "label": "Volumes Base Path",
+                    "description": "The base path for storing volumes.",
+                    "default": "/home/docker/data"
+                }
+            ]
         }
     ]
 }
