@@ -1,0 +1,31 @@
+version: "3"
+services:
+  vaultwarden:
+    image: vaultwarden/server:latest
+    container_name: vaultwarden
+    restart: unless-stopped
+    ports:
+      - ${PUBLIC_PORT}:80 #map any custom port to use (replace 9445 not 80)
+    volumes:
+      - ./vaultwarden:/data:rw
+    environment:
+      # Environment variable is specific to the Rocket web server
+      # - ROCKET_TLS={certs="/ssl/certs/certs.pem",key="/ssl/private/key.pem"}
+      - ADMIN_TOKEN=${ADMIN_TOKEN}
+      - WEBSOCKET_ENABLED=true
+      - SIGNUPS_ALLOWED=false
+      - SMTP_HOST=${SMTP_HOST}
+      - SMTP_FROM=${SMTP_FROM}
+      - SMTP_PORT=${SMTP_PORT}
+      - SMTP_SSL=${SMTP_SSL}
+      - SMTP_USERNAME=${SMTP_USERNAME}
+      - SMTP_PASSWORD=${SMTP_PASSWORD}
+      - DOMAIN=${DOMAIN}
+
+volumes:
+  vaultwarden:
+    driver: local
+    driver_opts:
+      type: none
+      device: ${VOLUMES_BASE_PATH}/vaultwarden
+      o: bind

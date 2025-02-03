@@ -435,6 +435,75 @@
                     "default": "/home/docker/data"
                 }
             ]
+        },
+        {
+            "id": 12,
+            "type": 3,
+            "name": "Vaultwarden",
+            "title": "Vaultwarden",
+            "description": "Vaultwarden is a password manager.",
+            "note": "Ensure the volume path /mnt/data/docker/vaultwarden exists and has the correct permissions.",
+            "categories": ["Password", "Security"],
+            "platform": "linux",
+            "logo": "https://raw.githubusercontent.com/imagegenius/templates/main/unraid/img/vaultwarden.png",
+            "repository": {
+                "url": "https://github.com/kirillrepkin/portainer-templates",
+                "stackfile": "apps/vaultwarden/docker-compose.yml"
+            },
+            "env": [
+                {
+                    "name": "VOLUMES_BASE_PATH",
+                    "label": "Volumes Base Path",
+                    "description": "The base path for storing volumes.",
+                    "default": "/home/docker/data"
+                },
+                {
+                    "name": "PUBLIC_PORT",
+                    "label": "Public Port",
+                    "description": "The port number where Vaultwarden will be accessible.",
+                    "default": "3343"
+                },
+                {
+                    "name": "ADMIN_TOKEN",
+                    "label": "Admin Token",
+                    "description": "The admin token for Vaultwarden.",
+                    "default": "admin"
+                },
+                {
+                    "name": "SMTP_HOST",
+                    "label": "SMTP Host",
+                    "default": "localhost"
+                },
+                {
+                    "name": "SMTP_FROM",
+                    "label": "SMTP From",
+                    "default": "admin@localhost"
+                },
+                {
+                    "name": "SMTP_PORT",
+                    "label": "SMTP Port",
+                    "default": "25"
+                },
+                {
+                    "name": "SMTP_SSL",
+                    "label": "SMTP SSL",
+                    "default": "false"
+                },
+                {
+                    "name": "SMTP_USERNAME",
+                    "label": "SMTP Username",
+                    "default": ""
+                },
+                {
+                    "name": "SMTP_PASSWORD",
+                    "label": "SMTP Password",
+                    "default": ""
+                },
+                {
+                    "name": "DOMAIN",
+                    "label": "Domain",
+                    "default": "localhost"
+                }
         }
     ]
 }
