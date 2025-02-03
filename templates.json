@@ -556,6 +556,108 @@
                     "default": "/home/docker/data"
                 }
             ]
+        },
+        {
+            "id": 14,
+            "type": 3,
+            "name": "nextcloud",
+            "title": "",
+            "description": "",
+            "note": "",
+            "categories": ["Personal", "Cloud"],
+            "platform": "linux",
+            "logo": "https://camo.githubusercontent.com/5acd203ccf6471ec71f5a40928aab3e2cf856addda38015e184e283d1a64a56d/68747470733a2f2f63646e2e7261776769742e636f6d2f6e657874636c6f75642f646f636b65722f303731623838386637663638396361613632633134393862366336316362333539396263656132622f6c6f676f2e737667",
+            "repository": {
+                "url": "https://github.com/kirillrepkin/portainer-templates",
+                "stackfile": "apps/nextcloud/docker-compose.yml"
+            },
+            "env": [
+                {
+                    "name": "POSTGRES_DB",
+                    "label": ""
+                },
+                {
+                    "name": "POSTGRES_USER",
+                    "label": ""
+                },
+                {
+                    "name": "POSTGRES_PASSWORD",
+                    "label": ""
+                },
+                {
+                    "name": "POSTGRES_HOST",
+                    "label": ""
+                },
+                {
+                    "name": "NEXTCLOUD_ADMIN_USER",
+                    "label": ""
+                },
+                {
+                    "name": "NEXTCLOUD_ADMIN_PASSWORD",
+                    "label": ""
+                },
+                {
+                    "name": "SMTP_HOST",
+                    "label": ""
+                },
+                {
+                    "name": "SMTP_SECURE",
+                    "label": ""
+                },
+                {
+                    "name": "SMTP_PORT",
+                    "label": ""
+                },
+                {
+                    "name": "SMTP_AUTHTYPE",
+                    "label": ""
+                },
+                {
+                    "name": "SMTP_NAME",
+                    "label": ""
+                },
+                {
+                    "name": "SMTP_PASSWORD",
+                    "label": ""
+                },
+                {
+                    "name": "MAIL_FROM_ADDRESS",
+                    "label": ""
+                },
+                {
+                    "name": "MAIL_DOMAIN",
+                    "label": ""
+                },
+                {
+                    "name": "REDIS_HOST",
+                    "label": ""
+                },
+
+                {
+                    "name": "REDIS_HOST_PORT",
+                    "label": ""
+                },
+                {
+                    "name": "REDIS_HOST_USER",
+                    "label": ""
+                },
+                {
+                    "name": "REDIS_HOST_PASSWORD",
+                    "label": ""
+                },
+                {
+                    "name": "PUBLIC_PORT",
+                    "label": ""
+                },
+                {
+                    "name": "DATA_PATH",
+                    "label": ""
+                },
+                {
+                    "name": "VOLUMES_BASE_PATH",
+                    "label": ""
+                }
+            ]
         }
     ]
 }
