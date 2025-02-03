@@ -504,6 +504,58 @@
                     "label": "Domain",
                     "default": "localhost"
                 }
+            ]
+        },
+        {
+            "id": 13,
+            "type": 3,
+            "name": "s3fs-cryfs",
+            "title": "s3fs-cryfs",
+            "description": "s3fs-cryfs is a FUSE filesystem that mounts S3 compatible storage buckets",
+            "note": "Ensure the volume path /mnt/data/docker/s3fs-cryfs exists and has the correct permissions.",
+            "categories": ["Storage"],
+            "platform": "linux",
+            "logo": "https://d2908q01vomqb2.cloudfront.net/22d200f8670dbdb3e253a90eee5098477c95c23d/2017/12/19/KMS_feature.png",
+            "repository": {
+                "url": "https://github.com/kirillrepkin/portainer-templates",
+                "stackfile": "system/s3fs-cryfs/docker-compose.yml"
+            },
+            "env": [
+                {
+                    "name": "S3_BUCKET",
+                    "label": ""
+                },
+                {
+                    "name": "S3_ACCESS_KEY",
+                    "label": ""
+                },
+                {
+                    "name": "S3_SECRET_KEY",
+                    "label": ""
+                },
+                {
+                    "name": "S3_URL",
+                    "label": ""
+                },
+                {
+                    "name": "UID",
+                    "label": ""
+                },
+                {
+                    "name": "GID",
+                    "label": ""
+                },
+                {
+                    "name": "CRYFS_ENC_PASSWD",
+                    "label": ""
+                },
+                {
+                    "name": "VOLUMES_BASE_PATH",
+                    "label": "Volumes Base Path",
+                    "description": "The base path for storing volumes.",
+                    "default": "/home/docker/data"
+                }
+            ]
         }
     ]
 }

@@ -1,0 +1,51 @@
+version: '3.8'
+
+services:
+  s3fs:
+    image: efrecon/s3fs
+    devices:
+      - /dev/fuse:/dev/fuse
+    cap_add:
+      - SYS_ADMIN
+    security_opt:
+      - apparmor=unconfined
+    environment:
+      AWS_S3_BUCKET: "${S3_BUCKET}"
+      AWS_S3_ACCESS_KEY_ID: "${S3_ACCESS_KEY}"
+      AWS_S3_SECRET_ACCESS_KEY: "${S3_SECRET_KEY}"
+      AWS_S3_URL: "${S3_URL}"
+      AWS_S3_MOUNT: "/opt/s3fs/bucket"
+      UID: "${UID}"
+      GID: "${GID}"
+    volumes:
+      - encrypted:/opt/s3fs/bucket:rshared
+
+  cryfs:
+    image: edyounis/cryfs
+    container_name: cryfs
+    restart: unless-stopped
+    depends_on:
+      - s3fs
+    cap_add:
+      - SYS_ADMIN
+    devices:
+      - /dev/fuse:/dev/fuse
+    environment:
+      PASSWD: "${CRYFS_ENC_PASSWD}"
+    volumes:
+      - encrypted:/encrypted
+      - decrypted:/decrypted:shared
+
+volumes:
+  encrypted:
+    driver: local
+    driver_opts:
+      type: none
+      device: ${VOLUMES_BASE_PATH}/s3fs_${S3_BUCKET}_encrypted
+      o: bind
+  decrypted:
+    driver: local
+    driver_opts:
+      type: none
+      device: ${VOLUMES_BASE_PATH}/s3fs_${S3_BUCKET}_decrypted
+      o: bind
