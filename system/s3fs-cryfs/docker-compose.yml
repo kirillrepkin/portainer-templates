@@ -33,7 +33,7 @@ services:
     environment:
       PASSWD: "${CRYFS_ENC_PASSWD}"
     volumes:
-      - encrypted:/encrypted
+      - encrypted:/encrypted:shared
       - decrypted:/decrypted:shared
 
 volumes:
