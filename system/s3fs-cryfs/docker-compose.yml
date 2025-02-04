@@ -2,9 +2,9 @@ version: '3.8'
 
 services:
   s3fs:
-    image: efrecon/s3fs
+    image: efrecon/s3fs:1.91
     devices:
-      - /dev/fuse:/dev/fuse
+      - '/dev/fuse:/dev/fuse'
     cap_add:
       - SYS_ADMIN
     security_opt:
@@ -29,7 +29,7 @@ services:
     cap_add:
       - SYS_ADMIN
     devices:
-      - /dev/fuse:/dev/fuse
+      - '/dev/fuse:/dev/fuse'
     environment:
       PASSWD: "${CRYFS_ENC_PASSWD}"
     volumes:
