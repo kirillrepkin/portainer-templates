@@ -523,31 +523,31 @@
             "env": [
                 {
                     "name": "S3_BUCKET",
-                    "label": ""
+                    "label": "S3_BUCKET"
                 },
                 {
                     "name": "S3_ACCESS_KEY",
-                    "label": ""
+                    "label": "S3_ACCESS_KEY"
                 },
                 {
                     "name": "S3_SECRET_KEY",
-                    "label": ""
+                    "label": "S3_SECRET_KEY"
                 },
                 {
                     "name": "S3_URL",
-                    "label": ""
+                    "label": "S3_URL"
                 },
                 {
                     "name": "UID",
-                    "label": ""
+                    "label": "UID"
                 },
                 {
                     "name": "GID",
-                    "label": ""
+                    "label": "GID"
                 },
                 {
                     "name": "CRYFS_ENC_PASSWD",
-                    "label": ""
+                    "label": "CRYFS_ENC_PASSWD"
                 },
                 {
                     "name": "VOLUMES_BASE_PATH",
@@ -574,88 +574,88 @@
             "env": [
                 {
                     "name": "POSTGRES_DB",
-                    "label": ""
+                    "label": "POSTGRES_DB"
                 },
                 {
                     "name": "POSTGRES_USER",
-                    "label": ""
+                    "label": "POSTGRES_USER"
                 },
                 {
                     "name": "POSTGRES_PASSWORD",
-                    "label": ""
+                    "label": "POSTGRES_PASSWORD"
                 },
                 {
                     "name": "POSTGRES_HOST",
-                    "label": ""
+                    "label": "POSTGRES_HOST"
                 },
                 {
                     "name": "NEXTCLOUD_ADMIN_USER",
-                    "label": ""
+                    "label": "NEXTCLOUD_ADMIN_USER"
                 },
                 {
                     "name": "NEXTCLOUD_ADMIN_PASSWORD",
-                    "label": ""
+                    "label": "NEXTCLOUD_ADMIN_PASSWORD"
                 },
                 {
                     "name": "SMTP_HOST",
-                    "label": ""
+                    "label": "SMTP_HOST"
                 },
                 {
                     "name": "SMTP_SECURE",
-                    "label": ""
+                    "label": "SMTP_SECURE"
                 },
                 {
                     "name": "SMTP_PORT",
-                    "label": ""
+                    "label": "SMTP_PORT"
                 },
                 {
                     "name": "SMTP_AUTHTYPE",
-                    "label": ""
+                    "label": "SMTP_AUTHTYPE"
                 },
                 {
                     "name": "SMTP_NAME",
-                    "label": ""
+                    "label": "SMTP_NAME"
                 },
                 {
                     "name": "SMTP_PASSWORD",
-                    "label": ""
+                    "label": "SMTP_PASSWORD"
                 },
                 {
                     "name": "MAIL_FROM_ADDRESS",
-                    "label": ""
+                    "label": "MAIL_FROM_ADDRESS"
                 },
                 {
                     "name": "MAIL_DOMAIN",
-                    "label": ""
+                    "label": "MAIL_DOMAIN"
                 },
                 {
                     "name": "REDIS_HOST",
-                    "label": ""
+                    "label": "REDIS_HOST"
                 },
 
                 {
                     "name": "REDIS_HOST_PORT",
-                    "label": ""
+                    "label": "REDIS_HOST_PORT"
                 },
                 {
                     "name": "REDIS_HOST_USER",
-                    "label": ""
+                    "label": "REDIS_HOST_USER"
                 },
                 {
                     "name": "REDIS_HOST_PASSWORD",
-                    "label": ""
+                    "label": "REDIS_HOST_PASSWORD"
                 },
                 {
                     "name": "PUBLIC_PORT",
-                    "label": ""
+                    "label": "PUBLIC_PORT"
                 },
                 {
                     "name": "DATA_PATH",
-                    "label": ""
+                    "label": "DATA_PATH"
                 },
                 {
                     "name": "VOLUMES_BASE_PATH",
-                    "label": ""
+                    "label": "VOLUMES_BASE_PATH"
                 }
             ]
         }
