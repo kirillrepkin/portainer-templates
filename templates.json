@@ -656,6 +656,30 @@
                 {
                     "name": "VOLUMES_BASE_PATH",
                     "label": "VOLUMES_BASE_PATH"
+                },
+                {
+                    "name": "OBJECTSTORE_S3_BUCKET",
+                    "label": "OBJECTSTORE_S3_BUCKET"
+                },
+                {
+                    "name": "OBJECTSTORE_S3_REGION",
+                    "label": "OBJECTSTORE_S3_REGION"
+                },
+                {
+                    "name": "OBJECTSTORE_S3_HOST",
+                    "label": "OBJECTSTORE_S3_HOST"
+                },
+                {
+                    "name": "OBJECTSTORE_S3_PORT",
+                    "label": "OBJECTSTORE_S3_PORT"
+                },
+                {
+                    "name": "OBJECTSTORE_S3_KEY",
+                    "label": "OBJECTSTORE_S3_KEY"
+                },
+                {
+                    "name": "OBJECTSTORE_S3_SECRET",
+                    "label": "OBJECTSTORE_S3_SECRET"
                 }
             ]
         }
