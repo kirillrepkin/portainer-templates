@@ -40,6 +40,8 @@ services:
       OBJECTSTORE_S3_USEPATH_STYLE: false
       OBJECTSTORE_S3_OBJECT_PREFIX: 'urn/oid/'
       NEXTCLOUD_MEMORY_LIMIT: 2048M
+      PHP_MEMORY_LIMIT: 2048M
+      PHP_UPLOAD_LIMIT: 2048M
 
 volumes:
   nextcloud_html:
