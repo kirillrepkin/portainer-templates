@@ -182,6 +182,12 @@
                 "label": "Volumes Base Path",
                 "description": "The base path for storing volumes.",
                 "default": "/mnt/data/docker"
+            },
+            {
+                "name": "PUBLIC_PORT",
+                "label": "Public Port",
+                "description": "The port number where PostgreSQL will be accessible.",
+                "default": "5432"
             }
             ]
         },
