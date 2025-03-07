@@ -491,9 +491,9 @@
                     "default": "25"
                 },
                 {
-                    "name": "SMTP_SSL",
-                    "label": "SMTP SSL",
-                    "default": "false"
+                    "name": "SMTP_SECURITY",
+                    "label": "SMTP_SECURITY",
+                    "default": "starttls"
                 },
                 {
                     "name": "SMTP_USERNAME",

@@ -11,13 +11,13 @@ services:
     environment:
       # Environment variable is specific to the Rocket web server
       # - ROCKET_TLS={certs="/ssl/certs/certs.pem",key="/ssl/private/key.pem"}
-      - ADMIN_TOKEN=${ADMIN_TOKEN}
+      - ADMIN_TOKEN="${ADMIN_TOKEN}"
       - WEBSOCKET_ENABLED=true
       - SIGNUPS_ALLOWED=false
       - SMTP_HOST=${SMTP_HOST}
       - SMTP_FROM=${SMTP_FROM}
       - SMTP_PORT=${SMTP_PORT}
-      - SMTP_SSL=${SMTP_SSL}
+      - SMTP_SECURITY=${SMTP_SECURITY}
       - SMTP_USERNAME=${SMTP_USERNAME}
       - SMTP_PASSWORD=${SMTP_PASSWORD}
       - DOMAIN=${DOMAIN}
