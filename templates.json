@@ -647,6 +647,53 @@
                     "label": "OBJECTSTORE_S3_SECRET"
                 }
             ]
+        },
+        {
+            "id": 15,
+            "type": 3,
+            "name": "Zabbix",
+            "title": "Zabbix server",
+            "description": "Zabbix server",
+            "note": "",
+            "categories": ["Monitoring"],
+            "platform": "linux",
+            "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Zabbix_logo_square.svg/2500px-Zabbix_logo_square.svg.png",
+            "repository": {
+                "url": "https://github.com/kirillrepkin/portainer-templates",
+                "stackfile": "system/zabbix/docker-compose.yml"
+            },
+            "env": [
+                {
+                    "name": "POSTGRES_DB",
+                    "label": "POSTGRES_DB",
+                    "default": "zabbix"
+                },
+                {
+                    "name": "POSTGRES_USER",
+                    "label": "POSTGRES_USER",
+                    "default": "zabbix"
+                },
+                {
+                    "name": "POSTGRES_PASSWORD",
+                    "label": "POSTGRES_PASSWORD",
+                    "default": "zabbix"
+                },
+                {
+                    "name": "POSTGRES_HOST",
+                    "label": "POSTGRES_HOST",
+                    "default": "postgres"
+                },
+                {
+                    "name": "POSTGRES_PORT",
+                    "label": "POSTGRES_PORT",
+                    "default": "5432"
+                },
+                {
+                    "name": "TZ",
+                    "label": "TZ",
+                    "default": "Europe/Moscow"
+                }
+            ]
         }
     ]
 }
