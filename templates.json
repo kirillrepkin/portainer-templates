@@ -188,6 +188,12 @@
                 "label": "Public Port",
                 "description": "The port number where PostgreSQL will be accessible.",
                 "default": "5432"
+            },
+            {
+                "name": "POSTGRES_VERSION",
+                "lavel": "Postgres Version",
+                "description": "The version of PostgreSQL to use.",
+                "default": "latest"
             }
             ]
         },
