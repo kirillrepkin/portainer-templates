@@ -31,9 +31,6 @@ services:
   webserver:
     image: paperlessngx/paperless-ngx:latest
     restart: unless-stopped
-    depends_on:
-      - db
-      - broker
     ports:
       - "8000:8000"
     volumes:
