@@ -45,6 +45,10 @@ services:
     environment:
       PAPERLESS_REDIS: ${REDIS_URL:-redis://broker:6379}
       PAPERLESS_DBHOST: db
+      PAPERLESS_DBNAME: ${POSTGRES_DB:-paperless}
+      PAPERLESS_DBUSER: ${POSTGRES_USER:-paperless}
+      PAPERLESS_DBPASS: ${POSTGRES_PASSWORD:-paperless}
+
     extra_hosts:
       - "db:${POSTGRES_HOST:-db}"
       - "broker:${REDIS_HOST:-broker}"
