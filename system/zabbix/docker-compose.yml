@@ -3,7 +3,6 @@ services:
     image: zabbix/zabbix-server-pgsql:ubuntu-7.2.1
     container_name: zabbix-server
     restart: unless-stopped
-    network_mode: "host"
     ports:
       - "10051:10051"
     environment:
@@ -19,7 +18,6 @@ services:
     image: zabbix/zabbix-web-nginx-pgsql:ubuntu-7.2.1
     restart: unless-stopped
     container_name: zabbix-frontend
-    network_mode: "host"
     ports:
       - "10052:8080"
       - "10053:8443"
