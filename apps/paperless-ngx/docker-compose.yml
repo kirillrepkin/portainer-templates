@@ -38,7 +38,6 @@ services:
       - media:/usr/src/paperless/media
       - export:/usr/src/paperless/export
       - consume:/usr/src/paperless/consume
-    env_file: docker-compose.env
     environment:
       PAPERLESS_REDIS: ${REDIS_URL:-redis://broker:6379}
       PAPERLESS_DBHOST: db
@@ -49,7 +48,6 @@ services:
     extra_hosts:
       - "db:${POSTGRES_HOST:-db}"
       - "broker:${REDIS_HOST:-broker}"
-
 volumes:
   data:
     driver: local
