@@ -191,7 +191,7 @@
             },
             {
                 "name": "POSTGRES_VERSION",
-                "lavel": "Postgres Version",
+                "label": "Postgres Version",
                 "description": "The version of PostgreSQL to use.",
                 "default": "latest"
             }
