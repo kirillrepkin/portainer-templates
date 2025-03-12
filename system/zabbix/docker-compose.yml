@@ -37,22 +37,3 @@ services:
 
     depends_on:
       - zabbix-server
-
-  zabbix-agent:
-    image: zabbix/zabbix-agent:ubuntu-7.2.1
-    container_name: zabbix-agent
-    restart: unless-stopped
-    network_mode: "host"
-    ports:
-      - "10050:10050"
-    environment:
-      ZBX_ACTIVE_ALLOW: false
-      TZ: ${TZ}
-      ZBX_SERVER_HOST: zabbix-server
-      ZBX_SERVER_PORT: 10051
-      ZBX_HOSTNAME: zabbix-agent
-      ZBX_HOSTNAMEITEM: system.hostname
-      DEBUG_MODE: "true"
-      PGPASSWORD: ${POSTGRES_PASSWORD}
-    depends_on:
-      - zabbix-server
