@@ -73,9 +73,3 @@ volumes:
       type: none
       device: ${VOLUMES_BASE_PATH}/paperless-ngx/media
       o: bind
-  redis_data:
-    driver: local
-    driver_opts:
-      type: none
-      device: ${VOLUMES_BASE_PATH}/paperless-ngx/redis
-      o: bind
