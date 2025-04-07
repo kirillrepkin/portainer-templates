@@ -1,0 +1,15 @@
+services:
+  uptime-kuma:
+    image: louislam/uptime-kuma:1
+    volumes:
+      - data:/app/data
+    ports:
+      - ${PUBLIC_PORT:-3001}:3001
+    restart: unless-stopped
+volumes:
+  data:
+    driver: local
+    driver_opts:
+      type: none
+      device: ${VOLUMES_BASE_PATH}/uptime-kuma
+      o: bind
