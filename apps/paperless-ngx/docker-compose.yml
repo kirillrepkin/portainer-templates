@@ -29,7 +29,7 @@
 services:
 
   webserver:
-    image: paperlessngx/paperless-ngx:latest
+    image: paperlessngx/paperless-ngx:latest-ru
     restart: unless-stopped
     ports:
       - "8000:8000"
