@@ -15,10 +15,6 @@ EOF
 echo "🔧 Building Docker image..."
 docker build -t ${IMAGE_NAME}:${TAG} .
 
-# Tag for local registry
-LOCAL_IMAGE="${LOCAL_REGISTRY}/${IMAGE_NAME}:${TAG}"
-docker tag ${IMAGE_NAME}:${TAG} ${LOCAL_IMAGE}
-
 # Cleanup
 rm Dockerfile
 
