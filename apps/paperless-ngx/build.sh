@@ -7,7 +7,7 @@ TAG="latest-ru"
 
 # Create Dockerfile
 cat <<EOF > Dockerfile
-FROM paperless-ngx/paperless-ngx:latest
+FROM paperlessngx/paperless-ngx:latest
 RUN apt update && apt install -y tesseract-ocr-rus && apt clean
 EOF
 
