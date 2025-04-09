@@ -303,6 +303,11 @@
                     "name": "REDIS_URL",
                     "label": "Redis URL",
                     "default": "redis://redis:redis@localhost:6379/0"
+                },
+                {
+                    "name": "PAPERLESS_URL",
+                    "label": "Paperless URL",
+                    "description": "The URL where Paperless-NGX will be accessible."
                 }
             ]
         },
