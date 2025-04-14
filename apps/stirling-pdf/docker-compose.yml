@@ -1,0 +1,46 @@
+version: '3.3'
+services:
+  stirling-pdf:
+    image: docker.stirlingpdf.com/stirlingtools/stirling-pdf:latest
+    ports:
+      - '${PUBLIC_PORT}:8080'
+    volumes:
+      - trainingData:/usr/share/tessdata # Required for extra OCR languages
+      - extraConfigs:/configs
+      - customFiles:/customFiles/
+      - logs:/logs/
+      - pipeline:/pipeline/
+    environment:
+      - DOCKER_ENABLE_SECURITY=false
+      - LANGS=en_GB
+volumes:
+  trainingData:
+    driver: local
+    driver_opts:
+      type: none
+      device: ${VOLUMES_BASE_PATH}/stirling-pdf/trainingData
+      o: bind
+  extraConfigs:
+    driver: local
+    driver_opts:
+      type: none
+      device: ${VOLUMES_BASE_PATH}/stirling-pdf/extraConfigs
+      o: bind
+  customFiles:
+    driver: local
+    driver_opts:
+      type: none
+      device: ${VOLUMES_BASE_PATH}/stirling-pdf/customFiles
+      o: bind
+  logs:
+    driver: local
+    driver_opts:
+      type: none
+      device: ${VOLUMES_BASE_PATH}/stirling-pdf/logs
+      o: bind
+  pipeline:
+    driver: local
+    driver_opts:
+      type: none
+      device: ${VOLUMES_BASE_PATH}/stirling-pdf/pipeline
+      o: bind

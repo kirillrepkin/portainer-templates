@@ -733,6 +733,34 @@
                     "default": "3001"
                 }
             ]
+        },
+        {
+            "id": 17,
+            "type": 3,
+            "name": "Stirling-PDF",
+            "title": "Stirling-PDF",
+            "description": "Stirling-PDF",
+            "note": "",
+            "categories": ["PDF", "Automation"],
+            "platform": "linux",
+            "logo": "https://images.opencollective.com/stirling-pdf/76e2d61/background.png",
+            "repository": {
+                "url": "https://github.com/kirillrepkin/portainer-templates",
+                "stackfile": "apps/stirling-pdf/docker-compose.yml"
+            },
+            "env": [
+                {
+                    "name": "VOLUMES_BASE_PATH",
+                    "label": "Volumes Base Path",
+                    "description": "The base path for storing volumes.",
+                    "default": "/mnt/data/docker"
+                },
+                {
+                    "name": "PUBLIC_PORT",
+                    "label": "PUBLIC_PORT",
+                    "default": "8080"
+                }
+            ]
         }
     ]
 }
