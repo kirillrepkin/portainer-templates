@@ -12,6 +12,17 @@ services:
     volumes:
       - data:/data
       - letsencrypt:/etc/letsencrypt
+  
+  goaccess:
+    image: allinurl/goaccess
+    ports:
+      - 7890:7890
+    volumes:
+      - ${VOLUMES_BASE_PATH}/nginxproxymanager/configs/goaccess.vanilla.conf:/srv/config/goaccess.conf
+      - ${VOLUMES_BASE_PATH}/nginxproxymanager/data/logs:/srv/logs
+      - public:/srv/report
+    command: ["--no-global-config", "--config-file=/srv/config/goaccess.conf"]
+    restart: unless-stopped
 
 volumes:
   data:
@@ -26,4 +37,11 @@ volumes:
     driver_opts:
       type: none
       device: ${VOLUMES_BASE_PATH}/nginxproxymanager/letsencrypt
+      o: bind
+  
+  public:
+    driver: local
+    driver_opts:
+      type: none
+      device: ${VOLUMES_BASE_PATH}/nginxproxymanager/public
       o: bind
