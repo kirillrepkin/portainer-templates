@@ -761,6 +761,34 @@
                     "default": "8080"
                 }
             ]
+        },
+        {
+            "id": 18,
+            "type": 3,
+            "name": "Technitium DNS Server",
+            "title": "Technitium DNS Server",
+            "description": "Technitium DNS Server",
+            "note": "",
+            "categories": ["DNS"],
+            "platform": "linux",
+            "logo": "https://avatars.githubusercontent.com/u/12230362?v=4",
+            "repository": {
+                "url": "https://github.com/kirillrepkin/portainer-templates",
+                "stackfile": "system/technitium-dns/docker-compose.yml"
+            },
+            "env": [
+                {
+                    "name": "VOLUMES_BASE_PATH",
+                    "label": "Volumes Base Path",
+                    "description": "The base path for storing volumes.",
+                    "default": "/mnt/data/docker"
+                },
+                {
+                    "name": "PUBLIC_PORT",
+                    "label": "Public Port",
+                    "default": "5380"
+                }
+            ]
         }
     ]
 }
