@@ -27,10 +27,3 @@ volumes:
       type: none
       device: ${VOLUMES_BASE_PATH}/nginxproxymanager/letsencrypt
       o: bind
-  
-  public:
-    driver: local
-    driver_opts:
-      type: none
-      device: ${VOLUMES_BASE_PATH}/nginxproxymanager/public
-      o: bind
