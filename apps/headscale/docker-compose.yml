@@ -1,0 +1,20 @@
+services:
+  headscale:
+    image: headscale/headscale:latest
+    restart: unless-stopped
+    container_name: headscale
+    ports:
+      - "8080:8080"
+      - "9090:9090"
+    volumes:
+      # Please change <CONFIG_PATH> to the fullpath of the config folder just created
+      - headscale:/etc/headscale
+    command: serve
+
+volumes:
+  headscale:
+    driver: local
+    driver_opts:
+      type: none
+      device: ${VOLUMES_BASE_PATH}/headscale
+      o: bind

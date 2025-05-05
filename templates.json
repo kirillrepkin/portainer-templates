@@ -789,6 +789,29 @@
                     "default": "5380"
                 }
             ]
+        },
+        {
+            "id": 19,
+            "type": 3,
+            "name": "Headscale",
+            "title": "Headscale",
+            "description": "Headscale",
+            "note": "",
+            "categories": ["VPN"],
+            "platform": "linux",
+            "logo": "https://headscale.net/stable/logo/headscale3-dots.svg",
+            "repository": {
+                "url": "https://github.com/kirillrepkin/portainer-templates",
+                "stackfile": "apps/headscale/docker-compose.yml"
+            },
+            "env": [
+                {
+                    "name": "VOLUMES_BASE_PATH",
+                    "label": "Volumes Base Path",
+                    "description": "The base path for storing volumes.",
+                    "default": "/mnt/data/docker"
+                }
+            ]
         }
     ]
 }
