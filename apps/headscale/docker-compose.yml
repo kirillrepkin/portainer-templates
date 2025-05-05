@@ -4,7 +4,7 @@ services:
     restart: unless-stopped
     container_name: headscale
     ports:
-      - "8080:8080"
+      - "8888:8080"
       - "9090:9090"
     volumes:
       # Please change <CONFIG_PATH> to the fullpath of the config folder just created
