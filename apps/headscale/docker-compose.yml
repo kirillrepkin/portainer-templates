@@ -10,6 +10,13 @@ services:
       # Please change <CONFIG_PATH> to the fullpath of the config folder just created
       - headscale:/etc/headscale
     command: serve
+  headscale-ui:
+    image: ghcr.io/gurucomputing/headscale-ui:latest
+    restart: unless-stopped
+    container_name: headscale-ui
+    ports:
+      - 18443:8443
+      - 18080:8080
 
 volumes:
   headscale:
